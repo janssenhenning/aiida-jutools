@@ -271,7 +271,7 @@ class NodeTabulator(Tabulator):
                                 **kwargs)
 
 
-    def get_value(item, keypath):
+    def get_value(self, item, keypath):
         value, err = _jutools.node.get_from_nested_node(node=item,
                                                         keypath=keypath)
         
