@@ -148,7 +148,7 @@ class NodeTabulator(Tabulator):
         self._autolist_unpack_levels = unpack_levels
 
     def autolist(self,
-                 obj: orm.Node,
+                 item: orm.Node,
                  overwrite: bool = False,
                  pretty_print: bool = False,
                  **kwargs: Any):
@@ -161,10 +161,10 @@ class NodeTabulator(Tabulator):
         :param pretty_print: True: Print the generated list in pretty format.
         :param kwargs: Additional keyword arguments for subclasses.
         """
-        if not isinstance(obj, orm.Node):
+        if not isinstance(item, orm.Node):
             return
         # get all Dict input/output node names.
-        node = obj
+        node = item
 
         include_list = {}
 
