@@ -146,7 +146,7 @@ def get_from_nested_node(node: _orm.Node,
         return None, err
 
     if len(keypath) == 1:
-        return attr, None
+        return attr() if callable(attr) else attr, None
 
     elif isinstance(attr, dict):
         # applies e.g. to extras
